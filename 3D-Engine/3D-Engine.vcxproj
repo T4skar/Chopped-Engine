@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ModuleGUI.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Color.cpp" />
     <ClCompile Include="Source\External\ImGui\imgui.cpp" />
@@ -69,6 +70,7 @@
     <ClCompile Include="Source\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ModuleGUI.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Color.h" />
     <ClInclude Include="Source\External\ImGui\imconfig.h" />
@@ -141,6 +143,9 @@
     <ClInclude Include="Source\External\MathGeoLib\include\Math\TransformOps.h" />
     <ClInclude Include="Source\External\MathGeoLib\include\Time\Clock.h" />
     <ClInclude Include="Source\External\parson\parson.h" />
+    <ClInclude Include="Source\External\pcg-c-0.94\extras\entropy.h" />
+    <ClInclude Include="Source\External\pcg-c-0.94\extras\pcg_spinlock.h" />
+    <ClInclude Include="Source\External\pcg-c-0.94\include\pcg_variants.h" />
     <ClInclude Include="Source\glmath.h" />
     <ClInclude Include="Source\Globals.h" />
     <ClInclude Include="Source\Light.h" />
