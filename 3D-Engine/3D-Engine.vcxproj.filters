@@ -617,6 +617,9 @@
     <ClInclude Include="Source\External\DevIL\include\ilut_config.h">
       <Filter>Files\Libraries\Devil</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Time.h">
+      <Filter>Files\Primitives</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\External\MathGeoLib\include\Math\Matrix.inl">

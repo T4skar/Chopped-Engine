@@ -40,9 +40,12 @@ public:
 	bool show_config_window = false;
 	bool show_about_window = false;
 	bool show_settings_window = false;
-	bool show_performance_window = true;
+	bool show_performance_window = false;
 
 	bool should_exit_application = false;
+
+	std::vector<float> ms_info;
+	std::vector<float> fps_info;
 
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
@@ -64,6 +67,7 @@ private:
 	void Render3DWindow();
 	void ConfigWindow();
 	void AboutWindow();
+	void PerformanceWindow();
 
 	void BarFile();
 	void BarWindows();

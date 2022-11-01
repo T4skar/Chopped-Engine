@@ -3,6 +3,7 @@
 #include "ModuleEditor.h"
 #include "ModuleWindow.h"
 
+#include "Time.h"
 
 #include "ImGui/imgui.h"
 #include "ImGui/imgui_impl_sdl.h"
@@ -269,6 +270,50 @@ void ModuleEditor::Render3DWindow() {
 	ImGui::End();
 }
 
+void ModuleEditor::PerformanceWindow()
+{
+	if (!show_performance_window)
+	{
+		if (!fps_info.empty())
+		{
+			ms_info.clear();
+		}
+
+		if (!ms_info.empty())
+		{
+			ms_info.clear();
+		}
+
+		return;
+	}
+
+	if (fps_info.size() == TIMER_BUFFER_LENGTH)
+	{
+		fps_info.erase(fps_info.begin());
+	}
+	fps_info.push_back(Time->FPS());
+
+	if (ms_info.size() == TIMER_BUFFER_LENGTH)
+	{
+		ms_info.erase(ms_info.begin());
+	}
+	ms_info.push_back(Time->DeltaTimeMs());
+
+	ImGui::Begin("Performance", &show_performance_window);
+
+	char title[25];
+
+	sprintf_s(title, 25, "Framerate %.1f", fps_info.back());
+	ImGui::PlotHistogram("##framerate", &fps_info.front(), fps_info.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
+
+	sprintf_s(title, 25, "Milliseconds %.1f", ms_info.back());
+	ImGui::PlotHistogram("##milliseconds", &ms_info.front(), ms_info.size(), 0, title, 0.0f, 40.0f, ImVec2(310, 100));
+	ImGui::Text("\n");
+	ImGui::Text("Hardware");
+	//App->renderer->OnPerformanceWindow();
+
+	ImGui::End();
+}
 void ModuleEditor::ConfigWindow() {
 
 	

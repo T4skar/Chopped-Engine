@@ -3,6 +3,7 @@
 #include "Globals.h"
 
 #include "SDL/include/SDL.h"
+#include "Time.h"
 #pragma comment( lib, "Source/External/SDL/libx86/SDL2.lib" )
 #pragma comment( lib, "Source/External/SDL/libx86/SDL2main.lib" )
 
@@ -16,12 +17,16 @@ enum main_states
 	MAIN_EXIT
 };
 
+TimeManager* Time = NULL;
+
 int main(int argc, char ** argv)
 {
 	LOG("Starting game '%s'...", TITLE);
 
 	int main_return = EXIT_FAILURE;
 	main_states state = MAIN_CREATION;
+	Time = new TimeManager();
+
 	Application* App = NULL;
 
 	while (state != MAIN_EXIT)
@@ -53,7 +58,11 @@ int main(int argc, char ** argv)
 
 		case MAIN_UPDATE:
 		{
-			int update_return = App->Update();
+			Time->Start();
+
+			update_status update_return = App->Update();
+
+			Time->End();
 
 			if (update_return == UPDATE_ERROR)
 			{
@@ -82,7 +91,7 @@ int main(int argc, char ** argv)
 
 		}
 	}
-
+	delete Time;
 	delete App;
 	LOG("Exiting game '%s'...\n", TITLE);
 	return main_return;
