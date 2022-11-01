@@ -39,6 +39,10 @@ public:
 	bool show_render3d_window = false;
 	bool show_config_window = false;
 	bool show_about_window = false;
+	bool show_settings_window = false;
+	bool show_performance_window = true;
+
+	bool should_exit_application = false;
 
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
@@ -61,12 +65,9 @@ private:
 	void ConfigWindow();
 	void AboutWindow();
 
-	//Bar Options
 	void BarFile();
 	void BarWindows();
 	void BarXXX();
-
-	
 
 
 public:

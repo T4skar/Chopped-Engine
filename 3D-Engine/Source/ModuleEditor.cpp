@@ -3,6 +3,7 @@
 #include "ModuleEditor.h"
 #include "ModuleWindow.h"
 
+
 #include "ImGui/imgui.h"
 #include "ImGui/imgui_impl_sdl.h"
 #include "ImGui/imgui_impl_opengl3.h"
@@ -100,41 +101,16 @@ bool ModuleEditor::Init()
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
 	// Setup Dear ImGui style
 	ImGui::StyleColorsDark();
-	//ImGui::StyleColorsClassic();
+	
 
 	// Setup Platform/Renderer backends
 	ImGui_ImplSDL2_InitForOpenGL(App->window->window, gl_context);
 	ImGui_ImplOpenGL3_Init(glsl_version);
 	App->scene->LoadScene();
-	// Load Fonts
-	// - If no fonts are loaded, dear imgui will use the default font. You can also load multiple fonts and use ImGui::PushFont()/PopFont() to select them.
-	// - AddFontFromFileTTF() will return the ImFont* so you can store it if you need to select the font among multiple.
-	// - If the file cannot be loaded, the function will return NULL. Please handle those errors in your application (e.g. use an assertion, or display an error and quit).
-	// - The fonts will be rasterized at a given size (w/ oversampling) and stored into a texture when calling ImFontAtlas::Build()/GetTexDataAsXXXX(), which ImGui_ImplXXXX_NewFrame below will call.
-	// - Read 'docs/FONTS.md' for more instructions and details.
-	// - Remember that in C/C++ if you want to include a backslash \ in a string literal you need to write a double backslash \\ !
-	//io.Fonts->AddFontDefault();
-	//io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
-	//io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
-	//io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
-	//io.Fonts->AddFontFromFileTTF("../../misc/fonts/ProggyTiny.ttf", 10.0f);
-	//ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
-	//IM_ASSERT(font != NULL);
-
-	///////[RANDOM NUMBER GENERATOR]
-	/*int randNum = randomLCG.Int(1,3);
-	LOG("%i", randNum);*/
-
-
-	/*randNum.to_string();
-	LOG(randNum.to_string());
-	*/
-	//std::string numberString = std::to_string(randNum);
+	
 	glViewport(0, 0, (int)io.DisplaySize.x, (int)io.DisplaySize.y);
 	return ret;
 }
@@ -142,64 +118,16 @@ bool ModuleEditor::Init()
 // Called every update
 update_status ModuleEditor::Update(float dt)
 {
-	// Poll and handle events (inputs, window resize, etc.)
-		// You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
-		// - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
-		// - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application, or clear/overwrite your copy of the keyboard data.
-		// Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
-	//SDL_Event event;
-	/*while (SDL_PollEvent(&event))
-	{
-		ImGui_ImplSDL2_ProcessEvent(&event);
-		if (event.type == SDL_QUIT)
-			done = true;
-		if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(window))
-			done = true;
-	}*/
+	
 
 	// Start the Dear ImGui frame
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplSDL2_NewFrame();
 	ImGui::NewFrame();
 
-	// 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-   /* if (show_demo_window)
-		ImGui::ShowDemoWindow(&show_demo_window);*/
+
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-
-	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
-	{
-		//static float f = 0.0f;
-		//static int counter = 0;
-
-		//ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-		//ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-		//ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-		//ImGui::Checkbox("Another Window", &show_another_window);
-
-		//ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-		//ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-		//if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-		//    counter++;
-		//ImGui::SameLine();
-		//ImGui::Text("counter = %d", counter);
-
-		//ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-		//ImGui::End();
-	}
-
-	//// 3. Show another simple window.
-	//if (show_another_window)
-	//{
-	//    ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-	//    ImGui::Text("Hello from another window!");
-	//    if (ImGui::Button("Close Me"))
-	//        show_another_window = false;
-	//    ImGui::End();
-	//}
 
 
 
@@ -226,23 +154,63 @@ bool ModuleEditor::CleanUp()
 
 bool ModuleEditor::DrawMenuBar()
 {
-	//LOG("MenuBAR");
-  // ImGui::Begin("Menu bar", NULL, ImGuiWindowFlags_MenuBar);
-	/*if(ImGui::BeginMenuBar() )
-	{
-
-	}*/
+	
 	if (ImGui::BeginMainMenuBar())
 	{
-		BarFile();
-		BarWindows();
-		BarXXX();
+		if (ImGui::BeginMenu("File"))
+		{
+
+			if (ImGui::MenuItem("Close all windows"))
+			{
+				show_demo_window = false;
+			}
+
+			
+
+			ImGui::EndMenu();
+		}
+
+		if (ImGui::BeginMenu("Tools"))
+		{
+
+			if (ImGui::MenuItem("Console"))
+			{
+				show_console_window = true;
+			}
+
+			if (ImGui::MenuItem("Modules"))
+			{
+				show_settings_window = true;
+			}
+
+			if (ImGui::MenuItem("Performance"))
+			{
+				show_performance_window = true;
+			}
+
+			ImGui::EndMenu();
+		}
+
+		if (ImGui::BeginMenu("Help"))
+		{
+
+			if (ImGui::MenuItem("About"))
+			{
+				show_about_window = true;
+			}
+
+			// End Drawing Help Menu:
+			ImGui::EndMenu();
+		}
+
+		
 
 		ImGui::EndMainMenuBar();
 	}
 
 	return true;
 }
+
 void ModuleEditor::AddLogs(const char* text)
 {
 	// logs.appendf(text);
@@ -330,7 +298,7 @@ void ModuleEditor::AboutWindow() {
 		ImGui::Text("");
 
 		ImGui::Text("3rd Party Libreries Used:");
-		ImGui::Text("");
+		ImGui::TextWrapped(LIBRARIES_USED);
 		//ImGui::ColorButton();
 		ImGui::Text("License:");
 		ImGui::SameLine();

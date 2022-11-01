@@ -16,9 +16,6 @@
     <Filter Include="Files\Libraries">
       <UniqueIdentifier>{b90754f7-0153-44b5-b217-54813355aeec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Files\Libraries\ImGUI">
-      <UniqueIdentifier>{ec5f6167-532a-4045-9703-3c55f0cdcae2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Files\Libraries\MathGeoLib">
       <UniqueIdentifier>{fbe6e5a1-92b5-4e96-9544-3360dfb6c973}</UniqueIdentifier>
     </Filter>
@@ -46,6 +43,9 @@
     <Filter Include="Files\Libraries\Devil">
       <UniqueIdentifier>{b32f65d6-b098-4340-bf81-758fb6f3d3c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Files\Libraries\ImGui">
+      <UniqueIdentifier>{ec5f6167-532a-4045-9703-3c55f0cdcae2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">
@@ -70,25 +70,25 @@
       <Filter>Files\Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui_demo.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui_draw.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui_impl_opengl3.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui_impl_sdl.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui_tables.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\ImGui\imgui_widgets.cpp">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\MathGeoLib\include\Time\Clock.cpp">
       <Filter>Files\Libraries\MathGeoLib\Time</Filter>
@@ -243,31 +243,31 @@
       <Filter>Files\Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imconfig.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imgui.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imgui_impl_opengl3.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imgui_impl_opengl3_loader.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imgui_impl_sdl.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imgui_internal.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imstb_rectpack.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imstb_textedit.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\ImGui\imstb_truetype.h">
-      <Filter>Files\Libraries\ImGUI</Filter>
+      <Filter>Files\Libraries\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\MathGeoLib\include\MathBuildConfig.h">
       <Filter>Files\Libraries\MathGeoLib</Filter>

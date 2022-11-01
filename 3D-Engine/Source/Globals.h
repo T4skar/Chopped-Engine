@@ -39,3 +39,4 @@ enum update_status
 #define VSYNC true
 #define TITLE "Choped Engine"
 #define ORGANIZATION "CITM UPC"
+#define LIBRARIES_USED "SDL 2.0.16\nGLEW 2.1.0\nDear ImGui 1.86\nDevIL 1.8.0\nMathGeoLib\nAssimp\n"
