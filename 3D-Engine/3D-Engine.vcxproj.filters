@@ -7,9 +7,6 @@
     <Filter Include="Files\Modules">
       <UniqueIdentifier>{e6e538f0-f470-43c7-8c69-7e98d0d62064}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Files\Parson">
-      <UniqueIdentifier>{4d393ecd-7976-46be-886e-d2e47f480f98}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Files\Primitives">
       <UniqueIdentifier>{3c0128db-6d15-42d1-96de-a0f38dd777ad}</UniqueIdentifier>
     </Filter>
@@ -40,8 +37,14 @@
     <Filter Include="Files\Libraries\MathGeoLib\Math">
       <UniqueIdentifier>{343b3bab-5cb1-4cfd-baf5-e0518d10157e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Files\Libraries\SCG">
-      <UniqueIdentifier>{95325ccd-03ec-4af9-863a-3f3c752fd3fc}</UniqueIdentifier>
+    <Filter Include="Files\Libraries\Parson">
+      <UniqueIdentifier>{4d393ecd-7976-46be-886e-d2e47f480f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files\Libraries\Assimp">
+      <UniqueIdentifier>{43bac012-f5ab-4c8b-b8a4-77c82ab51886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Files\Libraries\Devil">
+      <UniqueIdentifier>{b32f65d6-b098-4340-bf81-758fb6f3d3c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +187,7 @@
       <Filter>Files\Libraries\MathGeoLib\Algorithm\Random</Filter>
     </ClCompile>
     <ClCompile Include="Source\External\parson\parson.c">
-      <Filter>Files\Parson</Filter>
+      <Filter>Files\Libraries\Parson</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleScene.cpp">
       <Filter>Files\Modules</Filter>
@@ -211,9 +214,6 @@
       <Filter>Files\Primitives</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleEditor.cpp">
-      <Filter>Files\Modules\GUI</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleGUI.cpp">
       <Filter>Files\Modules\GUI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -450,7 +450,7 @@
       <Filter>Files\Libraries\MathGeoLib\Algorithm\Random</Filter>
     </ClInclude>
     <ClInclude Include="Source\External\parson\parson.h">
-      <Filter>Files\Parson</Filter>
+      <Filter>Files\Libraries\Parson</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleScene.h">
       <Filter>Files\Modules</Filter>
@@ -485,17 +485,137 @@
     <ClInclude Include="Source\ModuleEditor.h">
       <Filter>Files\Modules\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="Source\External\pcg-c-0.94\extras\entropy.h">
-      <Filter>Files\Libraries\SCG</Filter>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\ai_assert.h">
+      <Filter>Files\Libraries\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Source\External\pcg-c-0.94\extras\pcg_spinlock.h">
-      <Filter>Files\Libraries\SCG</Filter>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\anim.h">
+      <Filter>Files\Libraries\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="Source\External\pcg-c-0.94\include\pcg_variants.h">
-      <Filter>Files\Libraries\SCG</Filter>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\camera.h">
+      <Filter>Files\Libraries\Assimp</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleGUI.h">
-      <Filter>Files\Modules\GUI</Filter>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\cexport.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\cfileio.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\cimport.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\color4.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\config.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\DefaultLogger.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\defs.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\Exporter.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\Importer.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\importerdesc.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\IOStream.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\IOSystem.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\light.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\Logger.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\LogStream.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\material.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\matrix3x3.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\matrix4x4.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\mesh.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\metadata.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\NullLogger.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\postprocess.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\ProgressHandler.hpp">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\quaternion.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\scene.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\texture.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\types.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\vector2.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\vector3.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\version.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\Compiler\poppack1.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\Compiler\pstdint.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Assimp\Assimp\include\Compiler\pushpack1.h">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\devil_cpp_wrapper.hpp">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\devil_internal_exports.h">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\il.h">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\il_wrap.h">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\ilu.h">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\ilu_region.h">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\ilut.h">
+      <Filter>Files\Libraries\Devil</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\DevIL\include\ilut_config.h">
+      <Filter>Files\Libraries\Devil</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -516,6 +636,27 @@
     </None>
     <None Include="Source\External\MathGeoLib\include\Geometry\KDTree.inl">
       <Filter>Files\Libraries\MathGeoLib\Geometry</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\color4.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\material.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\matrix3x3.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\matrix4x4.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\quaternion.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\vector2.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
+    </None>
+    <None Include="Source\External\Assimp\Assimp\include\vector3.inl">
+      <Filter>Files\Libraries\Assimp</Filter>
     </None>
   </ItemGroup>
 </Project>
